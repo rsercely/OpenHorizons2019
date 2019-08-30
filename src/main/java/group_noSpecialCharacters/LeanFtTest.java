@@ -63,30 +63,7 @@ public class LeanFtTest extends UnitTestClassBase {
                 .name("ADD TO CART")
                 .tagName("BUTTON").build());
         saveToCartButton.click();
-
-        WebElement menuCartWebElement = browser.describe(Link.class, new LinkDescription.Builder()
-                .accessibilityName("ShoppingCart")
-                .innerText(new RegExpProperty("\\d*"))
-                .role("link")
-                .tagName("A").build())
-                .describe(WebElement.class, new WebElementDescription.Builder()
-                        .accessibilityName("")
-                        .id("menuCart")
-                        .innerText("")
-                        .tagName("svg").build());
-        menuCartWebElement.click();
-
-        WebElement rEMOVEWebElement = browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .innerText("REMOVE")
-                .tagName("A").build());
-        rEMOVEWebElement.click();
-
-        Link hOMELink = browser.describe(Link.class, new LinkDescription.Builder()
-                .innerText("HOME")
-                .tagName("A").build());
-        hOMELink.click();
-
-
+        
     }
 
 }
