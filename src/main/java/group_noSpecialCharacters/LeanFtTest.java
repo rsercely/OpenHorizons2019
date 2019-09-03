@@ -76,10 +76,13 @@ public class LeanFtTest extends UnitTestClassBase {
                         .tagName("svg").build());
         menuCartWebElement.click();
 
-        WebElement rEMOVEWebElement = browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .innerText("REMOVE")
-                .tagName("A").build());
-        rEMOVEWebElement.click();
+        My1stAM appModel = new My1stAM(browser);
+        appModel.CheckOutBtnButton().click();
+        appModel.UsernameInOrderPaymentEditField().setValue("Robert says");
+        appModel.PasswordInOrderPaymentEditField().setValue("hello");
+        appModel.LoginBtnundefinedButton().click();
+        browser.back();
+        appModel.REMOVEWebElement().click();
 
         Link hOMELink = browser.describe(Link.class, new LinkDescription.Builder()
                 .innerText("HOME")
